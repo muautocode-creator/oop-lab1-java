@@ -1,0 +1,14 @@
+name: Notify Completion
+
+on:
+  workflow_run:
+    workflows: ["Build and Test Maven Project"]
+    types:
+      - completed
+
+jobs:
+  notify:
+    uses: mu-university/autocode-reusable-workflows/.github/workflows/notify-completion.yml@main
+    with:
+      webhook-url: 'https://eshonkulov-asliddin.jprq.live/workflow/results'
+      build-status: ${{ github.event.workflow_run.conclusion }}

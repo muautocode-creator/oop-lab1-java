@@ -1,0 +1,10 @@
+name: Build and Test Maven Project
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-and-test:
+    uses: mu-university/autocode-reusable-workflows/.github/workflows/maven-build-test.yml@main
+    with:
+      assignment-id: '1'
